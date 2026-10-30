@@ -1,0 +1,19 @@
+{
+ "zeros": 0.107246299,
+ "const_0.2": 0.16607025,
+ "heur": 0.192188905,
+ "fac": 0.513895793,
+ "transport": 0.166254952,
+ "cbp": 0.351573966,
+ "building": 0.116501682,
+ "final_blend_day2": 0.086447204,
+ "transport_route": 0.163889546,
+ "transport_tert": 0.116598301,
+ "bld_msshare": 0.493084282,
+ "sparse": 0.353429368,
+ "final_blend_day3b": 0.0848785,
+ "ruca": 0.255587699,
+ "climate_vuln": 0.535295761,
+ "wildfire": 0.520530053,
+ "final_blend_day4": 0.086673983
+}
