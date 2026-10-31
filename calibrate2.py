@@ -10,11 +10,13 @@ from predict import ROOT, components, load, probe_features, write
 from probes_day3 import F as F3
 from probes_day5 import F as F5
 
-RIDGE = 0.05
+RIDGE = 0.5
 scores = json.load(open(os.path.join(ROOT, "lb_scores.json")))
 out = components(load())
 allf = {"transport": probe_features(out)["transport"], "transport_route": F3["transport_route"], **F5}
-feats = {k: np.asarray(v, float) for k, v in allf.items() if k in scores}
+# sparse_s is excluded: its small-scale moment contradicts the large-scale probe and destabilises the fit
+USE = ["ruca_s", "tribal_s", "wildfire_s", "transport"]
+feats = {k: np.asarray(allf[k], float) for k in USE if k in scores}
 
 Ey2 = scores["zeros"] ** 2
 Ey = (0.04 + Ey2 - scores["const_0.2"] ** 2) / 0.4
